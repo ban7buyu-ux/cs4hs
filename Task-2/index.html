@@ -1,0 +1,13 @@
+<script>
+function filterByDept(dept) {
+const rows = document.querySelectorAll('#studentTable tr.data-row'); rows.forEach(row => {
+row.style.display = (dept === 'ALL' || row.dataset.dept === dept)
+? '' : 'none';
+});
+}
+function sortTable(col) {
+const table = document.getElementById('studentTable'); const rows = [...table.querySelectorAll('tr.data-row')]; rows.sort((a, b) =>
+a.cells[col].innerText.localeCompare(b.cells[col].innerText)); rows.forEach(r => table.appendChild(r));
+ 
+}
+</script>
